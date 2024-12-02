@@ -38,8 +38,4 @@ app.include_router(order_management_router, prefix="/order", tags=['Order-manage
 
 @app.on_event("startup")
 async def startup_event():
-    # Например, можно вызвать задачу при старте приложения
     delete_unverified_users.apply_async()
-    print("FastAPI приложение запущено.")
-
-
